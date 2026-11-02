@@ -26,6 +26,7 @@ nTokens = 6
 VAL, ADD, SUB, MUL, DIV, NO = range(nTokens)
 
 n, m = len(numbers), len(numbers) * 2
+numbers = cp_array([0] + list(numbers))  # numbers[k] is the kth number (k >= 1), the index 0 standing for no number
 M = range(1, m)  # note that we start at 1 (this is the way we need it)
 
 
@@ -268,10 +269,9 @@ minimize(
     right == [-1, 7, 4, 0, 6, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0],
     lowest == [-1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0],
     highest == [-1, 9, 6, 3, 6, 5, 6, 9, 8, 9, 0, 0, 0, 0, 0, 0],
-    #  indexes == [-1, 0, 0, 2, 0, 7, 8, 0, 3, 6, 0, 0, 0, 1, 4, 5],
+    index == [-1, 0, 0, 2, 0, 7, 8, 0, 3, 6, 0, 0, 0, 1, 4, 5],
     z2 == 5,
     z1 == [-1, 814, 74, 2, 72, 8, 9, 11, 4, 7, 0, 0, 0, 1, 6, 6],
-  but indexes is not valid in the PyCSP3 model (there is an offset by 1)  
 
 4)  ACE is slow when decomposing (so, needs -di=0)
 """
